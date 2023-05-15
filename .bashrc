@@ -101,6 +101,7 @@ PS1='[\u@\h \w \[\033[1;36m\]\A\[\033[0m\]]\$ '
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+#My neofetch config would be provided in the directory "neofetch"
 neofetch
 
 
