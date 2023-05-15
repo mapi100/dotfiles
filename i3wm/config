@@ -201,12 +201,21 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # battery notification
 exec --no-startup-id i3-battery-popup for_window [title="Battery Warning"] sticky enable
 
+# PulseAudio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle #mute sound
+# PulseAudio controls for microphone
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle #mute microphone
+bindsym XF86AudioMicRaiseVolume exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ +5% #increase microphone volume
+bindsym XF86AudioMicLowerVolume exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ -5% #decrease microphone volume
 
-# Volume control
-bindsym XF86AudioRaiseVolume exec amixer -q -c 0 sset Master 4%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q -c 0 sset Master 4%- unmute
-bindsym XF86AudioMute exec amixer -q -c 0 sset Master toggle
-
+# Volume control ALSA
+#bindsym XF86AudioRaiseVolume exec amixer -q -c 0 sset Master 4%+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q -c 0 sset Master 4%- unmute
+#bindsym XF86AudioMute exec amixer -q -c 0 sset Master toggle
+# Mic mute/unmute
+#bindsym XF86AudioMicMute exec amixer -q -c 0 sset Capture toggle
 
 #aesthetics
 default_border pixel 1
@@ -217,9 +226,6 @@ font pango: Fira Coda 12
 bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
 
 #Start-up Applications
-exec_always feh --bg-scale /home/mapo/Pictures/Wallpapers/ai2.png
+exec_always feh --bg-scale /home/mapo/Pictures/Wallpapers/rika.png
 exec_always blueman-applet
 exec_always nm-applet
-
-
-
