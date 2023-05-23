@@ -140,8 +140,8 @@ exec --no-startup-id flameshot
 bindsym Print exec "flameshot gui"
 
 # Set inner/outer gaps
-#gaps inner 5
-#gaps outer 2
+gaps inner 5
+gaps outer 2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -226,6 +226,7 @@ font pango: Fira Coda 12
 bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
 
 #Start-up Applications
-exec_always feh --bg-scale /home/mapo/Pictures/Wallpapers/rika.png
+exec_always feh --bg-scale /home/mapo/Pictures/Wallpapers/oil.jpg
+exec --no-startup-id picom -b
 exec_always blueman-applet
 exec_always nm-applet
