@@ -226,7 +226,7 @@ font pango: Fira Coda 12
 bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
 
 #Start-up Applications
-exec_always feh --bg-scale /home/mapo/Pictures/Wallpapers/oil.jpg
+exec_always feh --bg-scale /home/mapi/Pictures/wallpapers/oil.jpg
 exec --no-startup-id picom -b
 exec_always blueman-applet
 exec_always nm-applet
