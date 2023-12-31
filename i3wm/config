@@ -194,12 +194,18 @@ mode "$mode_gaps_outer" {
 }
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 
 # battery notification
 exec --no-startup-id i3-battery-popup for_window [title="Battery Warning"] sticky enable
+
+# autolock
+
 
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
@@ -217,16 +223,19 @@ bindsym XF86AudioMicLowerVolume exec --no-startup-id pactl set-source-volume @DE
 # Mic mute/unmute
 #bindsym XF86AudioMicMute exec amixer -q -c 0 sset Capture toggle
 
-#aesthetics
+# aesthetics
 default_border pixel 1
 default_floating_border pixel 1
 font pango: Fira Coda 12
 
-#lock screen
-bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
+# lock screen
+	# keybinding to lock screen manually
+	bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
+	# auto lock the screen
+	exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
-#Start-up Applications
-exec_always feh --bg-scale /home/mapi/Pictures/wallpapers/oil.jpg
+# Start-up Applications
+exec_always feh --bg-scale /home/mapi/Pictures/wallpapers/death_note.jpg
 exec --no-startup-id picom -b
 exec_always blueman-applet
 exec_always nm-applet
