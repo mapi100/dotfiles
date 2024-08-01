@@ -234,8 +234,14 @@ font pango: Fira Coda 12
 	# auto lock the screen
 	exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
 
-# Start-up Applications
-exec_always feh --bg-scale /home/mapi/Pictures/wallpapers/death_note.jpg
-exec --no-startup-id picom -b
+#mousepad sensitivity
+exec xset m 20/10 5
+
+# start-up services
 exec_always blueman-applet
-exec_always nm-applet
+exec_always nm-applet 
+# start-up aplications
+exec_always feh --bg-scale /home/mapi/Pictures/wallpapers/luna.jpg
+exec --no-startup-id picom -b
+exec_always discord
+exec_always firefox
