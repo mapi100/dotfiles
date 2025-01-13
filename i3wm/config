@@ -233,6 +233,8 @@ font pango: Fira Coda 12
 	bindsym $mod+shift+x exec /usr/bin/i3lock-fancy
 	# auto lock the screen
 	exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+#mousepad tapping yoga slim 7x
+exec --no-startup-id xinput set-prop 7 "libinput Tapping Enabled" 1
 
 #mousepad sensitivity
 exec xset m 20/10 5
