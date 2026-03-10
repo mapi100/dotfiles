@@ -1,6 +1,6 @@
 # Debian Setup
 
-This repository contains the packages and configuration needed to reproduce my Debian environment.
+This repository contains the packages and configuration needed to reproduce my Debian i3wm environment.
 
 ## Install packages
 
