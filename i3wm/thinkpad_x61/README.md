@@ -19,7 +19,7 @@ Create a script to toggle the keyboard layout between **English (US)** and **Spa
 nano ~/.config/i3/toggle-kb.sh
 ```
 
-Paste the following:
+### 2. Paste the following:
 
 ```bash
 #!/bin/sh
@@ -36,13 +36,13 @@ case "$current" in
 esac
 ```
 
-Make the script executable:
+### 3. Make the script executable:
 
 ```bash
 chmod +x ~/.config/i3/toggle-kb.sh
 ```
 
-Add this line to i3 config:
+### 4. Add this line to i3 config:
 
 ```bash
 bindsym $mod+m exec --no-startup-id ~/.config/i3/toggle-kb.sh
