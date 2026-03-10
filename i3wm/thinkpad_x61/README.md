@@ -3,6 +3,7 @@
 This repository contains the packages and configuration needed to reproduce my Debian i3wm environment.
 
 ## Install packages
+First, download **packages.txt** from the repository. Then,
 
 ```bash
 sudo apt update
