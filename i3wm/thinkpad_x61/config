@@ -13,10 +13,13 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager tray
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
+
+# Bluetooth applet
+exec --no-startup-id blueman-applet
 
 # Optional compositor (uncomment only if you install picom)
-# exec --no-startup-id picom
+exec --no-startup-id picom --backend xrender
 
 # Audio keys
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -145,7 +148,19 @@ bindsym $mod+r mode "resize"
 
 # Wallpaper
 exec_always --no-startup-id feh --bg-center "/home/mapi/Pictures/Holy_Theotokos.jpg"
+
+# Languages
+bindsym $mod+m exec --no-startup-id ~/.config/i3/toggle-kb.sh
+
+# Captura de pantalla completa directamente al portapapeles
+bindsym $mod+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+
+# Screenshot shortcut
+bindsym Mod4+Shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+
 # Keep i3status bar
 bar {
+	tray_output primary
         status_command i3status
 }
